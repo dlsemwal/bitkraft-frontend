@@ -1,0 +1,23 @@
+    <!--Whole Container -->
+    <div class="rca-container">
+      
+
+
+ 
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="../assets/images/logo.png"></a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class=""><a [routerLink]="['/home']"  routerLinkActive="active1">Home</a></li>
+            <li><a [routerLink]="['/team']"  routerLinkActive="active1">Team/Score</a></li>
+            <!-- <li><a [routerLink]="['/result']"  routerLinkActive="active1">Result</a></li> -->
+          </ul>
+        </div>
+      </nav>
+
+     <router-outlet></router-outlet>
+
+
+    </div>

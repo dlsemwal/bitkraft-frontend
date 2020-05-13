@@ -1,0 +1,180 @@
+ <!--Whole Container -->
+ <div class="rca-container rca-margin">
+   <h2>Team Points</h2>
+   <!--Live ScoreBoard -->
+   <div class="rca-row">
+     <!--Widget Inner -->
+
+
+     <div class="rca-column-8">
+       <!--Match Series-->
+       <div class="rca-medium-widget rca-top-border ">
+
+
+         <ul class="nav nav-tabs">
+           <li class="active"><a data-toggle="tab" href="#tab-41">POINTS</a></li>
+          
+
+         </ul>
+         <div class="tab-content">
+
+           <div id="tab-41" class="rca-tab-content rca-padding active">
+             <div class="rca-batting-score rca-padding">
+               <h3>Teams</h3>
+               <div class="rca-row">
+                 <div class="rca-header rca-table">
+                   <div class="rca-col">
+                     Country Name
+                   </div>
+                   <div class="rca-col">
+                     Points
+                   </div>
+                   <!-- <div class="rca-col">
+                      Players
+                  </div> -->
+
+
+                   <div class="rca-col">
+                     Won
+                   </div>
+                   <div class="rca-col">
+                     Lost
+                   </div>
+                   <div class="rca-col">
+                     Tied
+                   </div>
+                 </div>
+               </div>
+               <div class="rca-row">
+                 <div class="rca-table" *ngFor="let team of teamDataFirst" (click)="detailsList(team._id)">
+                   <div class="rca-col" (click)="detailsList(team._id)" [ngbPopover]="popContent1" placement="right"
+                     popoverClass="my-custom-class">
+                     {{team.country.name |uppercase}}
+                   </div>
+                   <!-- <ng-template #popContent1>
+       
+                      <p class="card-text text-danger popupText">Country Name: {{team.country.name |uppercase}}</p>
+                      <p class="card-text text-danger popupText">Team Name: {{team.name }}</p>
+                      <p class="card-text text-success popupText">Point:  {{team.won*2}}</p>
+                      <p class="card-text popupText">Won:  {{team.won}} </p>
+                      <p class="card-text text-danger popupText">Lost:  {{team.lost}} </p>
+                      <p class="card-text text-success popupText">Tied:  {{team.tied}} </p>
+                      <p class="card-text popupText">Played matches:{{team.playedMatches}} </p>
+                    
+                  </ng-template> -->
+                   <div class="rca-col">
+                     {{team.won*2}}
+                   </div>
+                   <!-- <div class="rca-col">
+                    {{teamDataFirst.players.length}}
+                  </div> -->
+
+
+                   <div class="rca-col">
+                     {{team.won}}
+                   </div>
+                   <div class="rca-col">
+                     {{team.lost}}
+                   </div>
+                   <div class="rca-col">
+                     {{team.tied}}
+                   </div>
+                 </div>
+
+               </div>
+
+
+             </div>
+
+           </div>
+        
+         </div>
+       </div>
+
+
+
+
+     </div>
+     <div class="rca-column-4">
+       <div class="rca-medium-widget rca-padding rca-live-season rca-top-border" *ngIf="showDetails && teamDetails">
+
+
+        <h3> {{teamDetails.name | titlecase}}</h3>
+         <p class="card-text text-success popupText"><b>Country Name:</b> {{teamDetails.country.name |uppercase}}</p>
+         <!-- <p class="card-text text-success popupText"><b>Team Name:</b></p> -->
+         <p class="card-text text-success popupText"><b>Point:</b> {{teamDetails.won*2}}</p>
+         <p class="card-text popupText text-success "><b>Won:</b> {{teamDetails.won}} </p>
+         <p class="card-text text-success popupText"><b>Lost:</b> {{teamDetails.lost}} </p>
+         <p class="card-text text-success popupText"><b>Tied: </b> {{teamDetails.tied}} </p>
+         <p class="card-text popupText text-success "><b>Played matches:</b> {{teamDetails.playedMatches}} </p>
+         <p class="card-text popupText text-success "><b>No. of Players:</b> {{teamDetails?.players.length}} </p>
+         <p class="card-text popupText text-success "><b>Players Name:</b>
+           <!-- <ul  class="">
+             <li *ngFor="let playerName of teamDetails.players">{{playerName.name | titlecase}}</li>
+           </ul> -->
+        <span *ngFor="let playerName of teamDetails?.players"  >
+        <span class="plyaer-name" [ngbPopover]="popContent1" placement="left"
+        popoverClass="my-custom-class">{{playerName.name | titlecase}}</span>
+        <ng-template #popContent1>
+       
+                      <p class="card-text text-danger popupText">Player Name: {{playerName.name | titlecase}} </p>
+                      <!-- <p class="card-text text-success popupText"><b>Team Name:</b> {{playerName.name }}</p> -->
+                      <p class="card-text text-success popupText"><b>Age:</b> {{playerName.age || 'Not Available' }}</p>
+                      <p class="card-text text-success popupText"><b>Height:</b> {{playerName.height || 'Not Available'}}</p>
+                      <p class="card-text text-success popupText"><b>weight:</b> {{playerName.weight || 'Not Available'}}</p>
+                      <p class="card-text text-success popupText"><b>Runs:</b> {{playerName.runs || 'Not Available'}}</p>
+                      <p class="card-text text-success popupText"><b>Wickets:</b> {{playerName.wickets || 'Not Available'}}</p>
+        </ng-template>
+      </span>
+
+         </p>
+
+
+       </div>
+       <!--Match Series-->
+       <div class="rca-medium-widget rca-padding rca-live-season rca-top-border" *ngIf="!showDetails">
+         <div class="rca-live-label rca-right">IND vs AUS</div>
+         <div class="rca-clear"></div>
+         <div class="rca-padding">
+           <h3 class="rca-match-title">
+             <a class="team-match">
+               {{matchData?.teamA.name}}<b> VS</b> {{matchData?.teamB.name}}
+             </a>
+           </h3>
+           <span class="rca-match-info"> {{matchData?.date| date:'dd-MM-yyyy hh:mm:ss a':'+0530'}}</span>
+           <div class="rca-top-padding">
+             <div class="  text-center">
+               <img src="../../assets/images/images.jpg" class="trophy-mg">
+               <h3 class="player">Winner Team
+                 <br>
+                 {{matchData?.result.outcome}}
+               </h3>
+
+             </div>
+
+           </div>
+
+         </div>
+         <div class="rca-top-padding rca-score-status">
+           <div class="rca-status-scroll">
+             <b>venue:</b> {{matchData?.venue.name| titlecase}},<br>
+             {{matchData?.venue.city|titlecase}},<br>
+             {{matchData?.venue.country|titlecase}}
+           </div>
+           <ul class="rca-bullet-list">
+             <li class="active" data-tab="#status1"></li>
+             <li data-tab="#status2"></li>
+             <li data-tab="#status3"></li>
+           </ul>
+         </div>
+
+       </div>
+    
+
+
+
+
+
+     </div>
+   </div>
+ </div>

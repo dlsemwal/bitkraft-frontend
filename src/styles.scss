@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #E6E6E6;
+    font-family: "Lato", Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #4d4d4d;
+}
+
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+     border: none;
+    // border-bottom-color: #3F96F7;
+    border-bottom: 5px solid #3F96F7;
+}
+
+.nav-tabs>li>a {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.popover {display: block}
+
+.popover-body {
+    padding: 10px;
+    font-size:19px; 
+}
+    .my-custom-class{
+        z-index: 999999 !important;
+    }
+
+
+    .navbar-default[_ngcontent-ivf-c0] .navbar-nav[_ngcontent-ivf-c0] > li[_ngcontent-ivf-c0] > a[_ngcontent-ivf-c0] {
+        font-size: 18px;
+        margin-right: 14px;
+      }
+      
+      .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+        color: #333;
+        background-color: transparent;
+        border-bottom: 5px solid green;
+        margin-right: 15px;
+      }
+
+      .navbar-default {
+        background-color: #f8f8f8;
+        border-color: #e7e7e7;
+        padding-top: 9px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }

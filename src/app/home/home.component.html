@@ -1,0 +1,239 @@
+<div class="rca-row">
+  <div class="rca-column-12">
+    <div class="rca-blog-image">
+      <h2>Cricket Tournaments in India</h2>
+    </div>
+  </div>
+</div>
+<div class="rca-row">
+
+  <div class="rca-column-5">
+    <!--Match Series-->
+    <div class="rca-medium-widget rca-blog-content">
+      <div class="rca-blog-image">
+        <a href="#">
+          <img src="../assets/images/Mahendra_Singh_Dhoni_batting.jpg">
+        </a>
+        <div class="rca-blog-head">
+          Dhoni batting against South Africa during the group stage match of 2013 ICC Champions Trophy.
+        </div>
+      </div>
+      <div class="rca-padding">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam tincidunt tortor, nec rutrum nibh posuere
+        nec. Aenean sodales justo vel mauris volutpat finibus. Mauris cursus ultricies leo ac vestibulum. Duis molestie
+        faucibus enim, nec tristique mi.
+      </div>
+    </div>
+
+ 
+
+  </div>
+  <div class="rca-column-7">
+    <!--Match Series-->
+    <div class="container rca-mini-widget rca-top-border rca-tab-simple">
+      <!-- <ul class="rca-tab-list">
+        <li class="rca-tab-link active" data-tab="ltab-1">Live</li>
+        <li class="rca-tab-link" data-tab="ltab-2">Results</li>
+        <li class="rca-tab-link" data-tab="ltab-3">Starts In</li>
+      </ul> -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#ltab-1">Match</a></li>
+        <li><a data-toggle="tab" href="#ltab-2" (click)="resultClick()">Results</a></li>
+        <!-- <li><a data-toggle="tab" href="#ltab-3">Point Table</a></li> -->
+       
+      </ul>
+      <div class="tab-content">
+      <div id="ltab-1" class="rca-padding rca-tab-content rca-multi-season active">
+       
+        <div id="" class="rca-tab-content active">
+          <div class="rca-padding">
+            <h3 class="rca-match-title">
+              <a class="team-match">
+                {{matchData.teamA.name}}<b> VS</b> {{matchData.teamB.name}}
+              </a>
+            </h3>
+         <span class="rca-match-info"> {{matchData.date| date:'dd-MM-yyyy hh:mm:ss a':'+0530'}}</span>
+            <div class="rca-top-padding">
+              <div class="rca-batsman striker text-center">
+                <img src="../../assets/images/images.jpg" class="trophy-mg">
+                <h3 class="player">Winner Team
+                  <br>
+                  {{matchData.result.outcome}}
+                </h3>
+               
+              </div>
+        
+            </div>
+         
+          </div>
+          <div class="rca-top-padding rca-score-status">
+            <div class="rca-status-scroll">
+           <b>venue:</b>  {{matchData.venue.name| titlecase}},<br>
+             {{matchData.venue.city|titlecase}},<br>
+             {{matchData.venue.country|titlecase}}
+            </div>
+            <ul class="rca-bullet-list">
+              <li class="active" data-tab="#status1"></li>
+              <li data-tab="#status2"></li>
+              <li data-tab="#status3"></li>
+            </ul>
+          </div>
+        </div>
+        <div id="" class="rca-tab-content">
+          <div class="rca-padding">
+            <h3 class="rca-match-title">
+              <a href="/widgets.html">
+                BAK: 93/8 in 19.2
+              </a>
+            </h3>
+            <p class="rca-match-info">
+              <span>BAK: 16/1 in 1.0</span>
+              <span>CRR:4.1</span>
+              <span>Req RR:10.1</span>
+            </p>
+            <div class="rca-top-padding">
+              <div class="rca-batsman striker">
+                <span class="player">V Kohli</span>
+                <span>48(27)</span>
+              </div>
+              <div class="rca-batsman">
+                <span class="player">MS Dhoni</span>
+                <span>14(8)</span>
+              </div>
+            </div>
+            <div class="rca-ball-detail">
+              <div class="rca-match-schedule">
+                Over: 24
+              </div>
+              <ul class="rca-ball-by">
+                <li class="b6">6</li>
+                <li class="">1wd</li>
+                <li class="w">w</li>
+                <li class="">1</li>
+                <li class="">2</li>
+                <li class="b6">4</li>
+              </ul>
+            </div>
+          </div>
+          <div class="rca-top-padding rca-score-status">
+            <div class="rca-status-scroll">
+              FOUR!!! from Dhoni
+            </div>
+            <ul class="rca-bullet-list">
+              <li class="active" data-tab="#status1"></li>
+              <li data-tab="#status2"></li>
+              <li data-tab="#status3"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="ltab-2" class="rca-padding rca-tab-content">
+        <div class="rca-match-detail rca-padding">
+          <h3 class="rca-match-title">
+            <a> {{matchData.teamA.name}}&nbsp;<b> VS</b>&nbsp; {{matchData.teamB.name}}</a>
+            <span class="rca-match-info rca-right">
+              2nd T20 Match
+            </span>
+          </h3>
+          <p class="rca-duration">Man of the Match: {{resultData.manOfTheMatch.name}}</p>
+          <p class="rca-duration">Winner Team: {{resultData.winner.name}}</p>
+          <p class="rca-duration">No. of Plyers: {{resultData.winner.players.length}}</p>
+         
+        </div>
+    
+      </div>
+      <div id="ltab-3" class="rca-padding rca-tab-content">
+        <div class="rca-match-detail rca-padding">
+          <h3 class="rca-match-title">
+            <a href="/widgets.html">BAN vs ZIM</a>
+            <span class="rca-match-info rca-right">
+              2nd T20 Match
+            </span>
+          </h3>
+          <p class="rca-duration">Start in 21hrs</p>
+          <p class="rca-match-schedule">Sun, 31 Jan 2:10 pm IST</p>
+        </div>
+        <div class="rca-match-detail rca-padding">
+          <h3 class="rca-match-title">
+            <a href="/widgets.html">BAN vs ZIM</a>
+            <span class="rca-match-info rca-right">
+              2nd T20 Match
+            </span>
+          </h3>
+          <p class="rca-duration">Start in 21hrs</p>
+          <p class="rca-match-schedule">Sun, 31 Jan 2:10 pm IST</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- <div class="rca-blog-image">
+        <h2>Ad Blog Content</h2>
+      </div> -->
+  </div>
+</div>
+
+<div class="rca-row">
+  <div class="rca-column-12">
+    <div class="rca-mini-widget rca-tab-simple">
+      <ul class="rca-tab-list">
+        <li class="rca-tab-link active" data-tab="rtab-1" onclick="showTab(this);">Photos</li>
+        <li class="rca-tab-link" data-tab="rtab-2" onclick="showTab(this);">Gallery</li>
+      </ul>
+      <div id="rtab-1" class="rca-padding rca-tab-content active">
+        <div class="rca-column-4">
+          <div class="rca-blog-content">
+            <div class="rca-blog-image">
+              <a href="#">
+                <img src="../assets/images/1200px-IPL_T20_Chennai_vs_Kolkata.jpg">
+              </a>
+              <div class="rca-blog-head">
+                Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur.
+              </div>
+            </div>
+            <div class="rca-padding">
+              Curabitur blandit bibendum massa a vestibulum. Pellentesque habitant morbi tristique senectus et netus et
+              malesuada fames ac turpis egestas. Class aptent taciti sociosqu...
+            </div>
+          </div>
+        </div>
+        <div class="rca-column-4">
+          <div class="rca-blog-content">
+            <div class="rca-blog-image">
+              <a href="#">
+                <img src="../assets/images/1200px-Flagcricket.jpg">
+              </a>
+              <div class="rca-blog-head">
+                India celebrate with the Asia Cup trophy, after easing past Bangladesh in the final in Mirpur
+              </div>
+            </div>
+            <div class="rca-padding">
+              Litora torquent per conubia nostra, per inceptos himenaeos. Aenean eleifend non augue eu euismod. Sed
+              tempus justo eu aliquam vestibulum. Sed sit amet metus mollis.
+            </div>
+          </div>
+        </div>
+        <div class="rca-column-4">
+          <div class="rca-blog-content">
+            <div class="rca-blog-image">
+              <a href="#">
+                <img src="../assets/images/Sachin_at_the_other_end.jpg">
+              </a>
+              <div class="rca-blog-head">
+                Vivamus luctus luctus efficitur. Vivamus tincidunt purus et facilisis efficitur.
+              </div>
+            </div>
+            <div class="rca-padding">
+              Donec mattis velit sed placerat dictum. Phasellus eget quam odio. Mauris non magna elit. In neque arcu,
+              auctor in tristique at, molestie quis mauris. Nullam suscipit sed nulla.
+            </div>
+          </div>
+        </div>
+        <div class="rca-clear"></div>
+      </div>
+      <div id="rtab-2" class="rca-padding rca-tab-content">
+        <div class="rca-clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
